@@ -4,11 +4,11 @@ Point your command prompt to this directory and run each line separately:
 
 arm-none-eabi-as -mcpu=cortex-m0 -mthumb -mapcs-32 -gstabs -ahls=main.lst -o main.o main.s
 
-arm-none-eabi-ld -v -T stm32f1_new.ld -nostartfiles -o simple-asm.elf main.o
+arm-none-eabi-ld -v -T stm32f1_new.ld -nostartfiles -o pattern-flasher.elf main.o
 
-arm-none-eabi-objcopy -O binary simple-asm.elf  simple-asm.bin
+arm-none-eabi-objcopy -O binary pattern-flasher.elf  pattern-flasher.bin
 
-arm-none-eabi-gdb simple-asm.elf
+arm-none-eabi-gdb pattern-flasher.elf
 
 target remote localhost:3333
 
@@ -20,10 +20,7 @@ continue
 
 >> PROFIT!
 
-
-
-
-
+NB: This uses an incorrect (but functional) linker script intended for the STM32F1. To be fixed soon!
 
 
 Old notes:
